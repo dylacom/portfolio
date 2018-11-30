@@ -1,0 +1,165 @@
+ 
+	
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title></title>
+
+<link media="screen" type="text/css" href="css/style3.css" rel="stylesheet"/>
+
+
+
+<link media="screen" type="text/css" href="css/jquery.fancybox.css" rel="stylesheet"/>
+<script src="js/jquery.1.3.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="js/jquery.fancybox.1.2.1.js" type="text/javascript"></script>
+<script src="js/jquery.pngFix.js" type="text/javascript"></script>
+<script src="js/jquery.imgPreview.js" type="text/javascript"></script>
+<script src="js/jquery.scrollTo.js" type="text/javascript"></script>
+<script src="js/core.js" type="text/javascript"></script>
+
+
+    
+    </head>
+    
+    <body style="background: #DAEAD9 url(header/headerbanner.png) no-repeat bottom right;">
+	<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	$("#banner").show(500);
+	//Speed of the slideshow
+	var speed = 10000;
+	
+	//You have to specify width and height in #slider CSS properties
+	//After that, the following script will set the width and height accordingly
+	
+	//alert($('#slider').width());
+	$('#img_gallery, #gallery li').width($('#slider').width());
+	$('#gallery').width($('#slider').width() * $('#gallery li').length);
+	//alert($('#mask-excerpt').height() * $('#excerpt li').length);
+	$('#info').height($('#img_info').height() * $('#info li').length);
+	$('#img_gallery, #gallery li').height($('#slider').height());
+	$('#img_info, #info li').height('240px');
+	$('#img_info, #info li').width('175px');
+	
+	$('#img_gallery, #gallery li').width('369px');
+	$('#gallery').width(369 * $('#gallery li').length);
+	//alert($('#mask-excerpt').height() * $('#excerpt li').length);
+	$('#info').height(300 * $('#info li').length);
+	$('#img_gallery, #gallery li').height(231);
+	$('#img_info, #info li').height('240px');
+	$('#img_info, #info li').width('175px');
+	
+	//Assign a timer, so it will run periodically
+	//var run = setInterval('newsscoller(0)', speed);	
+	
+	$('#gallery li:first, #info li:first').addClass('selected');
+
+	//Pause the slidershow with clearInterval
+	$('#btn-pause').click(function () {
+		clearInterval(run);
+		return false;
+	});
+
+	//Continue the slideshow with setInterval
+	$('#btn-play').click(function () {
+		run = setInterval('newsscoller(0)', speed);	
+		return false;
+	});
+	
+	//Next Slide by calling the function
+	$('#btn-next').click(function () {
+		newsscoller(0);	
+		return false;
+	});	
+
+	//Previous slide by passing prev=1
+	$('#btn-prev').click(function () {
+		newsscoller(1);	
+		return false;
+	});	
+	
+	//Mouse over, pause it, on mouse out, resume the slider show
+	$('#slider').hover(
+	
+		function() {
+			clearInterval(run);
+		}, 
+		function() {
+			run = setInterval('newsscoller(0)', speed);	
+		}
+	);
+	
+});
+
+function newsscoller(prev) {
+
+	//Get the current selected item (with selected class), if none was found, get the first item
+	var current_image = $('#gallery li.selected').length ? $('#gallery li.selected') : $('#gallery li:first');
+	var current_excerpt = $('#info li.selected').length ? $('#info li.selected') : $('#info li:first');
+
+	//if prev is set to 1 (previous item)
+	if (prev) {
+		
+		//Get previous sibling
+		var next_image = (current_image.prev().length) ? current_image.prev() : $('#gallery li:last');
+		var next_excerpt = (current_excerpt.prev().length) ? current_excerpt.prev() : $('#info li:last');
+	
+	//if prev is set to 0 (next item)
+	} else {
+		
+		//Get next sibling
+		var next_image = (current_image.next().length) ? current_image.next() : $('#gallery li:first');
+		var next_excerpt = (current_excerpt.next().length) ? current_excerpt.next() : $('#info li:first');
+	}
+
+	//clear the selected class
+	$('#info li, #gallery li').removeClass('selected');
+	
+	//reassign the selected class to current items
+	next_image.addClass('selected');
+	next_excerpt.addClass('selected');
+
+	//Scroll the items
+	$('#img_gallery').scrollTo(next_image, 800);		
+	$('#img_info').scrollTo(next_excerpt, 800);					
+	
+}
+
+</script>
+
+<div id="banner"><a id="btn-prev" href="#"><img alt="" src="img/fancy_left.png"/></a><a id="btn-next" href="#"><img alt="" src="img/fancy_right.png"/></a>
+<div id="slider"><div id="img_gallery"><ul id="gallery">
+				<li><img alt="" height="231" width="369" src="img/1.jpg"/></li>
+                <li><img alt="" height="231" width="369" src="img/2.jpg"/></li>
+			<li><img alt="" height="231" width="369" src="img/3.jpg"/></li>
+            <li><img alt="" height="231" width="369" src="img/4.jpg"/></li>
+			</ul></div></div>
+  
+  <div id="img_info"><ul id="info">
+			<li><h1>Headline one</h1>
+					<div style="font-style: normal; color: rgb(0, 0, 0); font-size: 12px;"> <p>text text text text text text text</p> </div>
+					<a target="_blank" title="" href="">link to your wesbite</a></li>
+				
+                
+        	<li><h1>Headline two</h1>
+					<div style="font-style: normal; color: rgb(0, 0, 0); font-size: 12px;"> <p>text text text text text text text</p> </div>
+					<a target="_blank" title="" href="">link to your wesbite</a></li>
+				
+                    
+                    
+                 	<li><h1>Headline three</h1>
+					<div style="font-style: normal; color: rgb(0, 0, 0); font-size: 12px;"> <p>text text text text text text text</p> </div>
+					<a target="_blank" title="" href="">link to your wesbite</a></li>
+				
+                    
+                  
+                 	<li><h1>Headline four</h1>
+					<div style="font-style: normal; color: rgb(0, 0, 0); font-size: 12px;"> <p>text text text text text text text</p> </div>
+					<a target="_blank" title="" href="">link to your wesbite</a></li>
+				
+                
+               
+  </ul></div></div><div style="display:none;" id="buttons"><a id="btn-pause" href="#">pause</a><a id="btn-play" href="#">play</a></div>
+  </body></html>

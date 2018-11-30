@@ -1,0 +1,228 @@
+*			{ margin:0px; padding:0px; }
+
+/*-------// general//-----*/
+
+body		{
+	font-family: "Comic Sans MS", cursive;
+	font-size: 12px;
+	background-image: url(img/bg.jpg);
+	background-repeat: repeat-x;
+	background-position: center;
+	}
+
+
+#background	{
+	width:100%;
+	height:800px;
+	background-image: url(img/tlo3.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	text-align: center;
+	}
+
+#page-wrap	{
+	width:940px;
+	height:800px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	text-align: center;
+	position: relative;
+	}
+	
+h1 {
+	float: right;
+	font-size: 17px;
+	color: #073155;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-align: right;
+	}
+
+	
+/*-------// Head//-----*/
+
+#header		{
+	width:940px;
+	height:140px;
+	text-align: left;
+	}
+
+#header img	{ 
+	border: 0px; 
+	}
+
+
+/*-------// navigation//-----*/
+#nav {
+	width: 180px;
+	z-index: 100;
+	text-align: center;
+	background-position: left;
+	position: absolute;
+	top: 160px;
+	left: 0px;
+	}
+	
+#main-nav {
+	list-style: none;
+	background-image: url(img/navfillar447.png);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	height: 400px;
+	width: 180px;
+	visibility: visible;
+	}
+
+#main-nav li { 
+	margin-top: 15px; 
+	}
+	
+#main-nav li a { 
+	text-decoration:none; 
+	}
+	
+#main-nav li a img { 
+	border: 0px; display:inline; 
+	}
+	
+#main-nav li ul{
+	clear: left;
+	position: absolute;
+	left: -999em;
+	z-index: 2;
+	list-style: none;
+	width: 180px;
+	}
+
+/*-------// elements//-----*/
+
+#contact		{
+	width: 120px;
+	max-width: 120px;
+	max-height: 250px;
+	height: 200px;
+	position: absolute;
+	top: 390px;
+	left: 330px;
+	}
+
+#van	{
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	background-image: url(img/vangrey.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	left: 700px;
+	top: 400px;
+	}
+	
+#window {
+	width: 190px;
+	height: 100px;
+	position: absolute;
+	margin-top: 140px;
+	margin-left: 650px;
+	}
+
+#cleaner {
+	width: 300px;
+	height: 328px;
+	position: absolute;
+	left: 700px;
+	top: 400px;
+	}
+
+/*-------// footer//-----*/
+
+#footer	{
+	width: 100%;
+	padding-top: 5px;
+	color:#CCC;
+	text-align: center;
+	font-size: 12px;
+	height: 400px;
+	background-color: #5A4B36;
+	clear: both;
+	}
+
+#footer a {
+	font-family: "Comic Sans MS", cursive;
+	color:#FFF;
+	text-decoration: none;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	height: 30px;
+	font-size: 12px;
+	}
+	
+#footer a:hover {
+	color:#FFFF62;
+	text-decoration: none;
+	background-color: #4A3E2D;
+	height: 30px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
+	
+#footer a:visited {
+	text-decoration:none;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
+	
+
+#footer #footer_section {
+	width:940px;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	border-left-style: none;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin-top: 20px;
+}
+
+#footer H5 {
+	font-size:16px;
+	font-weight:bold;
+	color:#300;
+}
+
+
+
+#footer #footer_section1 {
+	width: 300px;
+	float: left;
+	margin-top: 15px;
+	text-align: center;
+	margin-right: 20px;
+
+}
+
+#footer #footer_section2 {
+	width: 300px;
+	float: left;
+	margin-top: 15px;
+	text-align: center;
+	margin-right: 5px;
+
+}
+
+#footer #footer_section3 {
+	width: 300px;
+	float: right;
+	margin-top: 15px;
+	text-align: center;
+
+}
+
+
+	
